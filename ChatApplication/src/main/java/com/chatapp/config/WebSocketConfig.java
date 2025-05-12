@@ -13,12 +13,12 @@ public class WebSocketConfig implements WebSocketConfigurer {
     private final ChatHandler chatHandler;
 
     public WebSocketConfig(ChatHandler chatHandler) {
-        this.chatHandler = chatHandler; // ✅ Injected Spring-managed bean
+        this.chatHandler = chatHandler; // Injected Spring-managed bean
     }
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(chatHandler, "/chat") // ✅ Use the injected one
+        registry.addHandler(chatHandler, "/chat") //  Use the injected one
                 .setAllowedOrigins("http://127.0.0.1:5500");
     }
 }
