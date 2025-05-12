@@ -18,7 +18,7 @@ public class ChatController {
     @MessageMapping("/chat")
     @SendTo("/topic/messages")
     public Message send(Message message) throws Exception {
-        message.setTimestamp(LocalDateTime.now()); // ✅ Fixed here
+        message.setTimestamp(LocalDateTime.now()); // Fixed here
         messageRepository.save(message);
         return message;
     }
